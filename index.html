@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f7;
+      text-align: center;
+      padding: 50px;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    input {
+      padding: 10px;
+      width: 90%;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .certificate {
+      margin-top: 20px;
+      display: none;
+    }
+    img {
+      max-width: 100%;
+      border: 2px solid #333;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Certificate Verification</h2>
+    <p>Enter your Roll / Registration Number</p>
+    <input type="text" id="roll" placeholder="Enter Roll or Reg. No">
+    <button onclick="checkCertificate()">Check</button>
+
+    <div class="certificate" id="certificateBox">
+      <h3>Certificate Found ✅</h3>
+      <img src="https://via.placeholder.com/400x300.png?text=Your+Certificate" alt="Certificate">
+    </div>
+  </div>
+
+  <script>
+    function checkCertificate() {
+      let roll = document.getElementById("roll").value.trim();
+      let certBox = document.getElementById("certificateBox");
+
+      if (roll === "12345") {  
+        certBox.style.display = "block";
+      } else {
+        certBox.style.display = "none";
+        alert("Certificate not found for Roll: " + roll);
+      }
+    }
+  </script>
+</body>
+</html>
